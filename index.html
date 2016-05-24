@@ -35,12 +35,7 @@ InitChart();
 function InitChart(){
         var vis = d3.select("#svgVisualize");
         console.log(vis)
-        var xRange = d3.scale.linear().range([40, 400]).domain([d3.min(sampleData, function (d) {
-                            return (d.x);
-                        }),
-                        d3.max(sampleData, function (d) {
-                            return d.x;
-                        })]);
+        var xRange = d3.scale.linear().range([40, 400]).domain([0,100]);
         var yRange = d3.scale.linear().range([400, 40]).domain([d3.min(sampleData, function (d) {
                             return d.y;
                         }),
