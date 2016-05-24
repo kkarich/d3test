@@ -16,7 +16,7 @@ text {
 
 d3.json("data.json", function(error, root) {
   if (error) throw error;
-
+        console.log(root)
 
         var vis = d3.select("#svgVisualize");
         console.log(vis)
