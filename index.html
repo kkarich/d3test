@@ -30,8 +30,8 @@ d3.json("data.json", function(error, root) {
     circles
         .enter()
         .insert("circle")
-        .attr("cx", function (d) { return xRange (d.x); })
-        .attr("cy", function (d) { return yRange (d.y); })
+        .attr("cx", function (d) { return xRange (d.gp); })
+        .attr("cy", function (d) { return yRange (d.pts); })
         .attr("r", 10)
         .style("fill", "red");
 });
