@@ -12,25 +12,30 @@ text {
 <svg id="svgVisualize" width="500" height="500" style="border:1px solid Red;"></svg>
 <script>
 
-var sampleData = [{
-  "x": 1,
-  "y": 5
-}, {
-  "x": 20,
-  "y": 20
-}, {
-  "x": 40,
-  "y": 10
-}, {
-  "x": 60,
-  "y": 40
-}, {
-  "x": 80,
-  "y": 5
-}, {
-  "x": 100,
-  "y": 60
-}];
+
+
+d3.json("data.json", function(error, root) {
+  if (error) throw error;
+
+  var node = svg.selectAll(".node")
+      .data(bubble.nodes(classes(root))
+      .filter(function(d) { return !d.children; }))
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  node.append("title")
+      .text(function(d) { return d.className + ": " + format(d.value); });
+
+  node.append("circle")
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) { return color(d.packageName); });
+
+  node.append("text")
+      .attr("dy", ".3em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.className.substring(0, d.r / 3); });
+});
 InitChart();
 function InitChart(){
         var vis = d3.select("#svgVisualize");
