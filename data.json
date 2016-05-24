@@ -15,6 +15,277 @@
          "name":"Allen Iverson",
          "gp":71,
          "pts": 29.7
-     }
+     },
+     {
+    "name": "Jerry West",
+    "gp": 153,
+    "pts": 29.1
+},
+{
+    "name": "Kevin Durant",
+    "gp": 87,	
+    "pts": 28.7
+},
+{
+    "name": "LeBron James",
+    "gp": 190,
+    "pts": 27.9
+},
+{
+    "name": "Elgin Baylor",
+    "gp": 134,
+    "pts": 27.0
+},
+{
+    "name": "George Gervin",
+    "gp": 59,
+    "pts": 27.0
+    
+},
+{
+    "name": "Billyray Bates",
+    "gp": 6	,
+    "pts": 26.7
+    
+},
+{
+    "name": "Alex Groza",
+    "gp": 9	,
+    "pts": 26.0
+    
+},
+{
+    "name": "Hakeem Olajuwon",
+    "gp": 145,
+    "pts": 25.9
+},
+{
+    "name": "Stephen Curry",
+    "gp": 47,
+    "pts": 25.8
+    
+},
+{
+    "name": "Carmelo Anthony",
+    "gp": 66,
+    "pts": 25.7
+    
+},
+{
+    "name": "Kobe Bryant",
+    "gp": 220,
+    "pts": 25.6	
+},
+{
+    "name": "Bob Pettit",
+    "gp": 88,
+    "pts": 25.5
+    
+},
+{
+    "name": "Dominique Wilkins",
+    "gp": 56,
+    "pts": 25.4
+    
+},
+{
+    "name": "Dirk Nowitzki",
+    "gp": 145,
+    "pts": 25.3
+},
+{
+    "name": "Rick Barry",
+    "gp": 74,
+    "pts": 24.8
+    
+},
+{
+    "name": "Karl Malone",
+    "gp": 19,
+    "pts": 3	24
+    .7	
+},
+{
+    "name": "Bernard King",
+    "gp": 28,
+    "pts": 24.5
+    
+},
+{
+    "name": "Alex English",
+    "gp": 68,
+    "pts": 24.4
+    
+},
+{
+    "name": "Russell Westbrook",
+    "gp": 78,
+    "pts": 24.3
+    
+},
+{
+    "name": "Kareem Abdul-Jabbar",
+    "gp": 23,
+    "pts": 7	24
+    .3
+},
+{
+    "name": "Shaquille O'Neal",
+    "gp": 216,
+    "pts": 24.3	
+},
+{
+    "name": "Paul Arizin",
+    "gp": 49,
+    "pts": 24.2
+
+},
+{
+    "name": "amian Lillard",
+    "gp": 27,
+    "pts": 24.1
+    
+},
+{
+    "name": "George Mikan",
+    "gp": 70,
+    "pts": 24.0
+    
+},
+{
+    "name": "Larry Bird",
+    "gp": 164,
+    "pts": 23.8
+},
+{
+    "name": "Derrick Rose",
+    "gp": 41,
+    "pts": 23.7
+    
+},
+{
+    "name": "Charles Barkley",
+    "gp": 12,
+    "pts": 3	23
+    .0
+},
+{
+    "name": "David Thompson",
+    "gp": 27,
+    "pts": 22.9
+    
+},
+{
+    "name": "Bob Love",
+    "gp": 47,
+    "pts": 22.9
+    
+},
+{
+    "name": "Elvin Hayes",
+    "gp": 96,
+    "pts": 22.9
+    
+},
+{
+    "name": "Dwyane Wade",
+    "gp": 166,
+    "pts": 22.8
+},
+{
+    "name": "Wilt Chamberlain",
+    "gp": 160,
+    "pts": 22.5
+},
+{
+    "name": "Oscar Robertson",
+    "gp": 86,
+    "pts": 22.2
+    
+},
+{
+    "name": "Tracy McGrady",
+    "gp": 50,
+    "pts": 22.2
+    
+},
+{
+    "name": "Moses Malone",
+    "gp": 94,
+    "pts": 22.1
+    
+},
+{
+    "name": "LaMarcus Aldridge",
+    "gp": 44,
+    "pts": 22.1
+    
+},
+{
+    "name": "John Havlicek",
+    "gp": 172,
+    "pts": 22.0
+},
+{
+    "name": "Julius Erving",
+    "gp": 141,
+    "pts": 21.9
+},
+{
+    "name": "DeMar DeRozan",
+    "gp": 29,
+    "pts": 21.8
+    
+},
+{
+    "name": "Kemba Walker",
+    "gp": 11,
+    "pts": 21.5
+    
+},
+{
+    "name": "Marques Johnson",
+    "gp": 54,
+    "pts": 21.5
+    
+},
+{
+    "name": "Isaiah Thomas",
+    "gp": 10,
+    "pts": 21.5
+    
+},
+{
+    "name": "Jojo White",
+    "gp": 80,
+    "pts": 21.5
+    
+},
+{
+    "name": "John Williamson",
+    "gp": 4	,
+    "pts": 21.5
+    
+},
+{
+    "name": "Doug Collins",
+    "gp": 32,
+    "pts": 21.5
+    
+},
+{
+    "name": "Kyrie Irving",
+    "gp": 25,
+    "pts": 21.4
+    
+},
+{
+    "name": "Adrian Dantley",
+    "gp": 73,
+    "pts": 21.3
+}
      ]
 }
+
+
+    
