@@ -163,9 +163,8 @@
 },
 {
     "name": "Charles Barkley",
-    "gp": 12,
-    "pts": 3	23
-    .0
+    "gp": 123,
+    "pts": 23.0
 },
 {
     "name": "David Thompson",
