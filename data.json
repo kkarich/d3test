@@ -1,4 +1,20 @@
 {
  "name": "All Time Playoff Points Stats",
- "data":[]
+ "data":[
+     {
+         "name":"Michael Jordan",
+         "gp":179,
+         "pts"33.4:
+     },
+     {
+         "name":"Anthony Davis",
+         "gp":4,
+         "pts"31.5:
+     },
+     {
+         "name":"Allen Iverson",
+         "gp":71,
+         "pts"29.7:
+     },
+     ]
 }
