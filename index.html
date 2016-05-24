@@ -33,6 +33,7 @@ var sampleData = [{
 InitChart();
 function InitChart(){
         var vis = d3.select("#svgVisualize");
+        console.log(vis)
         var xRange = d3.scale.linear().range([40, 400]).domain([d3.min(sampleData, function (d) {
                             return (d.x);
                         }),
