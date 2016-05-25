@@ -43,6 +43,32 @@ text {
             .append("svg")
             .attr("width", 1000)
             .attr("height", 1000)
+            
+      function draw(data, count){
+        
+        
+        var xRange = d3.scale.linear().range([40, 400]).domain([1996,2016]);
+        var yRange = d3.scale.linear().range([400, 40]).domain([0,10]);
+        var xAxis = d3.svg.axis().scale(xRange);
+        var yAxis = d3.svg.axis().scale(yRange).orient("left");
+        svg.append("svg:g").call(xAxis).attr("transform", "translate(0,400)");
+        svg.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
+        var circles = d3.select("svg")
+            .selectAll("circle")
+            .data(data.slice(0,count))
+            .enter()
+            .append("circle")
+            
+        circleAttr = circles
+            .attr("cx", function (d) { return xRange(d.season); })
+            .attr("cy", function (d) { return yRange(d.FG3M); })
+            .attr("r", function (d) { return 2; })
+            .style("fill", function(d) { return 'blue'; });
+            
+            window.setTimeout(function(){draw(data, count + 5)},1000)
+      });
+          
+      }
       d3.json("/threes-data.json", function (results) {
         var data = [];
         for(var i in results.data){
@@ -54,25 +80,7 @@ text {
             }
         }
         
-        
-        var xRange = d3.scale.linear().range([40, 400]).domain([1996,2016]);
-        var yRange = d3.scale.linear().range([400, 40]).domain([0,10]);
-        var xAxis = d3.svg.axis().scale(xRange);
-        var yAxis = d3.svg.axis().scale(yRange).orient("left");
-        svg.append("svg:g").call(xAxis).attr("transform", "translate(0,400)");
-        svg.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
-        var circles = d3.select("svg")
-            .selectAll("circle")
-            .data(data.slice(0,5))
-            .enter()
-            .append("circle")
-            
-        circleAttr = circles
-            .attr("cx", function (d) { return xRange(d.season); })
-            .attr("cy", function (d) { return yRange(d.FG3M); })
-            .attr("r", function (d) { return 2; })
-            .style("fill", function(d) { return 'blue'; });
-      });
+            draw(data, 5)
             
         
         // var myChart = new dimple.chart(svg, data);
