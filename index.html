@@ -17,9 +17,9 @@ text {
         debugger;
         var myChart = new dimple.chart(svg, results.data[0].players);
         myChart.setBounds(60, 30, 505, 305)
-        var x = myChart.addCategoryAxis("x", "Month");
-        x.addOrderRule("Date");
-        myChart.addMeasureAxis("y", "Unit Sales");
+        var x = myChart.addCategoryAxis("x", "GP");
+        // x.addOrderRule("Date");
+        myChart.addMeasureAxis("y", "FG3M");
         myChart.addSeries("Channel", dimple.plot.bubble);
         myChart.addLegend(180, 10, 360, 20, "right");
         myChart.draw();
