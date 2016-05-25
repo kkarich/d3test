@@ -13,7 +13,7 @@ text {
 
   <script type="text/javascript">
     var svg = dimple.newSvg("body", 590, 400);
-      d3.json("/threes-data.tsv", function (data) {
+      d3.json("/threes-data.json", function (data) {
         var myChart = new dimple.chart(svg, data);
         myChart.setBounds(60, 30, 505, 305)
         var x = myChart.addCategoryAxis("x", "Month");
