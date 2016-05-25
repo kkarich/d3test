@@ -60,8 +60,8 @@ text {
             .append("circle")
             
         circleAttr = circles
-            .attr("cx", function (d) { return 10; })
-            .attr("cy", function (d) { return 10; })
+            .attr("cx", function (d) { return d.season; })
+            .attr("cy", function (d) { return d.FG3M; })
             .attr("r", function (d) { return 10; })
             .style("fill", function(d) { return 'blue'; });
       });
