@@ -12,27 +12,27 @@ text {
 <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
 
   <script type="text/javascript">
-    // var svg = dimple.newSvg("body", 1000, 800);
-    //   d3.json("/threes-data.json", function (results) {
-    //     var data = [];
-    //     for(var i in results.data){
-    //         for(var j in results.data[i].players){
-    //             var player = results.data[i].players[j];
-    //             player.season = parseInt(results.data[i].season.split('-')[0])
-    //             // player.season = results.data[i].season
-    //             data.push(player);
-    //         }
-    //     }
-    //     var myChart = new dimple.chart(svg, data);
-    //     myChart.setBounds(60, 30, 800, 600)
-    //     var x = myChart.addCategoryAxis("x", "season");
-    //     // x.addOrderRule("Date");
-    //     myChart.addMeasureAxis("y", "FG3M");
+    var svg = dimple.newSvg("body", 1000, 800);
+      d3.json("/threes-data.json", function (results) {
+        var data = [];
+        for(var i in results.data){
+            for(var j in results.data[i].players){
+                var player = results.data[i].players[j];
+                player.season = parseInt(results.data[i].season.split('-')[0])
+                // player.season = results.data[i].season
+                data.push(player);
+            }
+        }
+        var myChart = new dimple.chart(svg, data);
+        myChart.setBounds(60, 30, 800, 600)
+        var x = myChart.addCategoryAxis("x", "season");
+        // x.addOrderRule("Date");
+        myChart.addMeasureAxis("y", "FG3M");
         
-    //     var mySeries = myChart.addSeries(null, dimple.plot.bubble);
-    //     myChart.addLegend(180, 10, 360, 20, "right");
-    //     myChart.draw();
-    //   });
+        var mySeries = myChart.addSeries(null, dimple.plot.bar);
+        myChart.addLegend(180, 10, 360, 20, "right");
+        myChart.draw();
+      });
   </script>
 <script>
 
