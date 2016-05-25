@@ -58,7 +58,7 @@ text {
         svg.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
         var circles = d3.select("svg")
             .selectAll("circle")
-            .data(test)
+            .data(data)
             .enter()
             .append("circle")
             
