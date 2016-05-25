@@ -28,80 +28,28 @@ text {
 // var top5 = angular.element($('table.table')).scope().rows.slice(0,5)
 // JSON.stringify(top5)
 
-d3.json("data.json", function(error, root) {
-  if (error) throw error;
-        console.log(root)
-
-        var vis = d3.select("#svgVisualize");
-        console.log(vis)
-        var xRange = d3.scale.linear().range([40, 400]).domain([0,250]);
-        var yRange = d3.scale.linear().range([400, 40]).domain([20,35]);
-        var xAxis = d3.svg.axis().scale(xRange);
-        var yAxis = d3.svg.axis().scale(yRange).orient("left");
-        vis.append("svg:g").call(xAxis).attr("transform", "translate(0,400)");
-        vis.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
-        var circles = vis.selectAll("circle").data(root.data);
-    circles
-        .enter()
-        .insert("circle")
-        .attr("cx", function (d) { return xRange (d.gp); })
-        .attr("cy", function (d) { return yRange (d.pts); })
-        .attr("r", 10)
-        .style("fill", "red");
-});
-// http://stats.nba.com/league/player/#!/?Season=2015-16&SeasonType=Regular%20Season&sort=FG3M&dir=1&PerMode=Totals
-
-// var diameter = 960,
-//     format = d3.format(",d"),
-//     color = d3.scale.category20c();
-
-// var bubble = d3.layout.pack()
-//     .sort(null)
-//     .size([diameter, diameter])
-//     .padding(1.5);
-
-// var svg = d3.select("body").append("svg")
-//     .attr("width", diameter)
-//     .attr("height", diameter)
-//     .attr("class", "bubble");
-
 // d3.json("data.json", function(error, root) {
 //   if (error) throw error;
+//         console.log(root)
 
-//   var node = svg.selectAll(".node")
-//       .data(bubble.nodes(classes(root))
-//       .filter(function(d) { return !d.children; }))
-//     .enter().append("g")
-//       .attr("class", "node")
-//       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-//   node.append("title")
-//       .text(function(d) { return d.className + ": " + format(d.value); });
-
-//   node.append("circle")
-//       .attr("r", function(d) { return d.r; })
-//       .style("fill", function(d) { return color(d.packageName); });
-
-//   node.append("text")
-//       .attr("dy", ".3em")
-//       .style("text-anchor", "middle")
-//       .text(function(d) { return d.className.substring(0, d.r / 3); });
+//         var vis = d3.select("#svgVisualize");
+//         console.log(vis)
+//         var xRange = d3.scale.linear().range([40, 400]).domain([0,250]);
+//         var yRange = d3.scale.linear().range([400, 40]).domain([20,35]);
+//         var xAxis = d3.svg.axis().scale(xRange);
+//         var yAxis = d3.svg.axis().scale(yRange).orient("left");
+//         vis.append("svg:g").call(xAxis).attr("transform", "translate(0,400)");
+//         vis.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
+//         var circles = vis.selectAll("circle").data(root.data);
+//     circles
+//         .enter()
+//         .insert("circle")
+//         .attr("cx", function (d) { return xRange (d.gp); })
+//         .attr("cy", function (d) { return yRange (d.pts); })
+//         .attr("r", 10)
+//         .style("fill", "red");
 // });
 
-// // Returns a flattened hierarchy containing all leaf nodes under the root.
-// function classes(root) {
-//   var classes = [];
-
-//   function recurse(name, node) {
-//     if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
-//     else classes.push({packageName: name, className: node.name, value: node.size});
-//   }
-
-//   recurse(null, root);
-//   return {children: classes};
-// }
-
-// d3.select(self.frameElement).style("height", diameter + "px");
 
 </script>
 </body>
