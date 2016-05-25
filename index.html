@@ -12,7 +12,34 @@ text {
 <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
 
   <script type="text/javascript">
-    var svg = dimple.newSvg("body", 1000, 800);
+    // var svg = dimple.newSvg("body", 1000, 800);
+    //   d3.json("/threes-data.json", function (results) {
+    //     var data = [];
+    //     for(var i in results.data){
+    //         for(var j in results.data[i].players){
+    //             var player = results.data[i].players[j];
+    //             player.season = parseInt(results.data[i].season.split('-')[0])
+    //             // player.season = results.data[i].season
+    //             data.push(player);
+    //         }
+    //     }
+    //     var myChart = new dimple.chart(svg, data);
+    //     myChart.setBounds(60, 30, 800, 600)
+    //     var x = myChart.addCategoryAxis("x", "season");
+    //     // x.addOrderRule("Date");
+    //     myChart.addMeasureAxis("y", "FG3M");
+        
+    //     myChart.addSeries('PLAYER_NAME', dimple.plot.line);
+    //     myChart.addSeries('PLAYER_NAME', dimple.plot.bubble);
+    //     myChart.addLegend(180, 10, 360, 20, "right");
+    //     myChart.draw();
+
+
+  </script>
+  
+  
+  <script type="text/javascript">
+        var svg = dimple.newSvg("body", 1000, 800);
       d3.json("/threes-data.json", function (results) {
         var data = [];
         for(var i in results.data){
@@ -33,8 +60,10 @@ text {
         myChart.addSeries('PLAYER_NAME', dimple.plot.bubble);
         myChart.addLegend(180, 10, 360, 20, "right");
         myChart.draw();
-      });
+
+
   </script>
+  
 <script>
 
 // var top5 = angular.element($('table.table')).scope().rows.slice(0,5)
