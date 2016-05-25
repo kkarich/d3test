@@ -10,18 +10,19 @@ text {
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-<svg id="svgVisualize" width="500" height="500" style="border:1px solid Red;"></svg>
+
   <script type="text/javascript">
-    var svg = dimple.newSvg("body", 800, 600);
-    var data = [
-      { "Word":"Hello", "Awesomeness":2000 },
-      { "Word":"World", "Awesomeness":3000 }
-    ];
-    var chart = new dimple.chart(svg, data);
-    chart.addCategoryAxis("x", "Word");
-    chart.addMeasureAxis("y", "Awesomeness");
-    chart.addSeries(null, dimple.plot.bar);
-    chart.draw();
+    var svg = dimple.newSvg("body", 590, 400);
+      d3.json("/threes-data.tsv", function (data) {
+        var myChart = new dimple.chart(svg, data);
+        myChart.setBounds(60, 30, 505, 305)
+        var x = myChart.addCategoryAxis("x", "Month");
+        x.addOrderRule("Date");
+        myChart.addMeasureAxis("y", "Unit Sales");
+        myChart.addSeries("Channel", dimple.plot.bubble);
+        myChart.addLegend(180, 10, 360, 20, "right");
+        myChart.draw();
+      });
   </script>
 <script>
 
