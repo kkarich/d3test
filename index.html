@@ -51,7 +51,7 @@ text {
             d3.min(d3.values(data), function (d) { return d.season}),
             d3.max(d3.values(data), function (d) { return d.season})
             ]);
-        var yRange = d3.scale.linear().range([800, 40]).domain([0,10]);
+        var yRange = d3.scale.linear().range([800, 40]).domain([0,6]);
         var xAxis = d3.svg.axis().scale(xRange);
         var yAxis = d3.svg.axis().scale(yRange).orient("left");
         svg.append("svg:g").call(xAxis).attr("transform", "translate(0,800)");
