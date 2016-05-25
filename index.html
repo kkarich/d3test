@@ -47,7 +47,7 @@ text {
       function draw(data, count){
         var data;
         
-        var xRange = d3.scale.linear().range([40, 800]).domain([
+        var xRange = d3.scale.linear().range([0, 800]).domain([
             d3.min(d3.values(data), function (d) { return d.season}),
             d3.max(d3.values(data), function (d) { return d.season})
             ]);
