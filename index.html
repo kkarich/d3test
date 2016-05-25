@@ -45,11 +45,11 @@ text {
             .attr("height", 1000)
             
       function draw(data, count){
-        var data = data.slice(0,count)
+        var test = data.slice(0,count)
         
         var xRange = d3.scale.linear().range([40, 400]).domain([
-            d3.min(d3.values(data), function (d) { return d.season}),
-            d3.max(d3.values(data), function (d) { return d.season})
+            d3.min(d3.values(test), function (d) { return d.season}),
+            d3.max(d3.values(test), function (d) { return d.season})
             ]);
         var yRange = d3.scale.linear().range([400, 40]).domain([0,10]);
         var xAxis = d3.svg.axis().scale(xRange);
@@ -58,7 +58,7 @@ text {
         svg.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
         var circles = d3.select("svg")
             .selectAll("circle")
-            .data(data)
+            .data(test)
             .enter()
             .append("circle")
             
