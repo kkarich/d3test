@@ -47,7 +47,10 @@ text {
       function draw(data, count){
         
         
-        var xRange = d3.scale.linear().range([40, 400]).domain([1996,2016]);
+        var xRange = d3.scale.linear().range([40, 400]).domain([
+            d3.max(d.season, function(e) { return d3.max(e); }) ,
+            d3.min(d.season, function(e) { return d3.min(e); })
+            ]);
         var yRange = d3.scale.linear().range([400, 40]).domain([0,10]);
         var xAxis = d3.svg.axis().scale(xRange);
         var yAxis = d3.svg.axis().scale(yRange).orient("left");
