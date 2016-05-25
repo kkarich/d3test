@@ -53,16 +53,23 @@ text {
                 data.push(player);
             }
         }
-        var myChart = new dimple.chart(svg, data);
-        myChart.setBounds(60, 30, 800, 600)
-        var x = myChart.addCategoryAxis("x", "season");
-        // x.addOrderRule("Date");
-        myChart.addMeasureAxis("y", "FG3M");
+        d3.select("svg")
+            .selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            
         
-        myChart.addSeries('PLAYER_NAME', dimple.plot.line);
-        myChart.addSeries('PLAYER_NAME', dimple.plot.bubble);
-        myChart.addLegend(180, 10, 360, 20, "right");
-        myChart.draw();
+        // var myChart = new dimple.chart(svg, data);
+        // myChart.setBounds(60, 30, 800, 600)
+        // var x = myChart.addCategoryAxis("x", "season");
+        // // x.addOrderRule("Date");
+        // myChart.addMeasureAxis("y", "FG3M");
+        
+        // myChart.addSeries('PLAYER_NAME', dimple.plot.line);
+        // myChart.addSeries('PLAYER_NAME', dimple.plot.bubble);
+        // myChart.addLegend(180, 10, 360, 20, "right");
+        // myChart.draw();
 
 
   </script>
