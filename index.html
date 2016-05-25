@@ -14,9 +14,17 @@ text {
   <script type="text/javascript">
     var svg = dimple.newSvg("body", 590, 400);
       d3.json("/threes-data.json", function (results) {
-        var myChart = new dimple.chart(svg, results.data[results.data.length - 1].players);
+        var data = [];
+        for(var i in results.data){
+            for(var j in results.data[i].players){
+                var player = results.data[i].players[j];
+                player.season = results.data[i].season
+                data.push(player);
+            }
+        }
+        var myChart = new dimple.chart(svg, data);
         myChart.setBounds(60, 30, 505, 305)
-        var x = myChart.addCategoryAxis("x", "FG3A");
+        var x = myChart.addCategoryAxis("x", "season");
         // x.addOrderRule("Date");
         myChart.addMeasureAxis("y", "FG3M");
         myChart.addSeries("PLAYER_NAME", dimple.plot.bubble);
