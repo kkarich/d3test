@@ -65,8 +65,8 @@ text {
             .attr("r", function (d) { return 2; })
             .style("fill", function(d) { return 'blue'; });
             
-            window.setTimeout(function(){draw(data, count + 5)},1000)
-      });
+            window.setTimeout(function(){draw(data, count + 5) },1000)
+      
           
       }
       d3.json("/threes-data.json", function (results) {
@@ -81,7 +81,7 @@ text {
         }
         
             draw(data, 5)
-            
+      });
         
         // var myChart = new dimple.chart(svg, data);
         // myChart.setBounds(60, 30, 800, 600)
