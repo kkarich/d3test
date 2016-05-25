@@ -48,8 +48,8 @@ text {
         
         
         var xRange = d3.scale.linear().range([40, 400]).domain([
-            d3.min(d.season, function(e) { return d3.max(e); }) ,
-            d3.max(d.season, function(e) { return d3.min(e); })
+            d3.min(data, function(d) { return d3.min(d.season); }) ,
+            d3.max(data, function(d) { return d3.max(d.season); })
             ]);
         var yRange = d3.scale.linear().range([400, 40]).domain([0,10]);
         var xAxis = d3.svg.axis().scale(xRange);
