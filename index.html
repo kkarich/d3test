@@ -18,7 +18,7 @@ text {
         for(var i in results.data){
             for(var j in results.data[i].players){
                 var player = results.data[i].players[j];
-                player.season = i
+                player.season = results.data[i].season
                 data.push(player);
             }
         }
