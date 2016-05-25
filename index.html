@@ -53,12 +53,12 @@ text {
                 data.push(player);
             }
         }
-      });
         d3.select("svg")
             .selectAll("circle")
             .data(data)
             .enter()
             .append("circle")
+      });
             
         
         // var myChart = new dimple.chart(svg, data);
