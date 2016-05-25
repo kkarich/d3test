@@ -39,7 +39,10 @@ text {
   
   
   <script type="text/javascript">
-        var svg = dimple.newSvg("body", 1000, 800);
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 1000)
+            .attr("height", 1000)
       d3.json("/threes-data.json", function (results) {
         var data = [];
         for(var i in results.data){
