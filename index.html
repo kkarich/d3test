@@ -18,8 +18,8 @@ text {
         for(var i in results.data){
             for(var j in results.data[i].players){
                 var player = results.data[i].players[j];
-                // player.season = parseInt(results.data[i].season.split('-')[0])
-                player.season = results.data[i].season
+                player.season = parseInt(results.data[i].season.split('-')[0])
+                // player.season = results.data[i].season
                 data.push(player);
             }
         }
