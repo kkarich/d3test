@@ -55,10 +55,10 @@ path {
         width = 600 - margin.left - margin.right,
         height = 270 - margin.top - margin.bottom;
       
-        var svg = d3.select("body")
-            .append("svg")
-            .attr("width", 1000)
-            .attr("height", 1000)
+        // var svg = d3.select("body")
+        //     .append("svg")
+        //     .attr("width", 1000)
+        //     .attr("height", 1000)
             
             
             
@@ -85,6 +85,15 @@ path {
         
         svg.append("svg:g").call(xAxis).attr("transform", "translate(0,800)");
         svg.append("svg:g").call(yAxis).attr("transform", "translate(800,0)");
+        
+        var svg = d3.select("body")
+            .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+                .attr("transform", 
+                      "translate(" + margin.left + "," + margin.top + ")");
+        
         var circles = d3.select("svg")
             .selectAll("circle")
             .data(data)
