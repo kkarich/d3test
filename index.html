@@ -51,6 +51,10 @@ path {
   
   
   <script type="text/javascript">
+        var margin = {top: 30, right: 20, bottom: 30, left: 50},
+        width = 600 - margin.left - margin.right,
+        height = 270 - margin.top - margin.bottom;
+      
         var svg = d3.select("body")
             .append("svg")
             .attr("width", 1000)
@@ -98,20 +102,9 @@ path {
         
             draw(data, 5)
       });
-        
-        // var myChart = new dimple.chart(svg, data);
-        // myChart.setBounds(60, 30, 800, 600)
-        // var x = myChart.addCategoryAxis("x", "season");
-        // // x.addOrderRule("Date");
-        // myChart.addMeasureAxis("y", "FG3M");
-        
-        // myChart.addSeries('PLAYER_NAME', dimple.plot.line);
-        // myChart.addSeries('PLAYER_NAME', dimple.plot.bubble);
-        // myChart.addLegend(180, 10, 360, 20, "right");
-        // myChart.draw();
 
 
-  </script>
+</script>
   
 <script>
 
