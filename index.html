@@ -103,6 +103,17 @@ path {
                 .attr("class", "y axis")
                 .call(yAxis);
 
+            
+            // Define the line
+            var valueline = d3.svg.line()
+                .x(function(d) { return x(d.season); })
+                .y(function(d) { return y(d.FG3M); });
+            
+            // Add the valueline path.
+            svg.append("path")
+                .attr("class", "line")
+                .attr("d", valueline(data));
+        
             svg.selectAll("circle")
                 .data(data)
                 .enter().append("circle")
