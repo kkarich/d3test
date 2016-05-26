@@ -83,8 +83,8 @@ path {
         var xAxis = d3.svg.axis().scale(xRange);
         var yAxis = d3.svg.axis().scale(yRange).orient("left");
         
-        svg.append("svg:g").call(xAxis).attr("transform", "translate(0,800)");
-        svg.append("svg:g").call(yAxis).attr("transform", "translate(800,0)");
+        // svg.append("svg:g").call(xAxis).attr("transform", "translate(0,800)");
+        // svg.append("svg:g").call(yAxis).attr("transform", "translate(800,0)");
         
         var svg = d3.select("body")
             .append("svg")
