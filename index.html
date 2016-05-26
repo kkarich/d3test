@@ -113,6 +113,12 @@ path {
             svg.append("path")
                 .attr("class", "line")
                 .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === 'Stephen Curry') return true }  )));
+                
+                
+            // Add the valueline path.
+            svg.append("path")
+                .attr("class", "line")
+                .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === 'Ray Allen') return true }  )));
         
             svg.selectAll("circle")
                 .data(data)
