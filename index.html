@@ -103,7 +103,7 @@ path {
                 .attr("class", "y axis")
                 .call(yAxis);
 
-        d3.select("svg")
+        svg
             .selectAll("circle")
             .data(data)
             .enter().append("circle")
