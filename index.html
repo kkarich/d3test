@@ -106,8 +106,8 @@ path {
             
             // Define the line
             var valueline = d3.svg.line()
-                .x(function(d) { return x(d.season); })
-                .y(function(d) { return y(d.FG3M); });
+                .x(function(d) { return xRange(d.season); })
+                .y(function(d) { return yRange(d.FG3M); });
             
             // Add the valueline path.
             svg.append("path")
