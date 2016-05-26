@@ -60,8 +60,19 @@ path {
             .attr("width", 1000)
             .attr("height", 1000)
             
-      function draw(data, count){
-        var data;
+            
+            
+      d3.json("/threes-data.json", function (results) {
+        data = [];
+        for(var i in results.data){
+            for(var j in results.data[i].players){
+                var player = results.data[i].players[j];
+                player.season = parseInt(results.data[i].season.split('-')[0])
+                // player.season = results.data[i].season
+                data.push(player);
+            }
+        }
+        
         
         var xRange = d3.scale.linear().range([0, 800]).domain([
             d3.min(d3.values(data), function (d) { return d.season}),
@@ -74,7 +85,7 @@ path {
         svg.append("svg:g").call(yAxis).attr("transform", "translate(800,0)");
         var circles = d3.select("svg")
             .selectAll("circle")
-            .data(data.slice(0,count))
+            .data(data)
             .enter()
             .append("circle")
             
@@ -83,24 +94,6 @@ path {
             .attr("cy", function (d) { return yRange(d.FG3M); })
             .attr("r", function (d) { return 2; })
             .style("fill", function(d) { return 'blue'; });
-            
-            
-            if(count < data.length) window.setTimeout(function(){draw(data, count + 5) },1000)
-      
-          
-      }
-      d3.json("/threes-data.json", function (results) {
-        data = [];
-        for(var i in results.data){
-            for(var j in results.data[i].players){
-                var player = results.data[i].players[j];
-                player.season = parseInt(results.data[i].season.split('-')[0])
-                // player.season = results.data[i].season
-                data.push(player);
-            }
-        }
-        
-            draw(data, 5)
       });
 
 
