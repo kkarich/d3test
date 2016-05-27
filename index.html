@@ -68,6 +68,7 @@ path {
             for(var j in results.data[i].players){
                 var player = results.data[i].players[j];
                 player.season = parseInt(results.data[i].season.split('-')[0])
+                player.rank = j + 1;
                 // player.season = results.data[i].season
                 data.push(player);
             }
