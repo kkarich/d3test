@@ -117,6 +117,21 @@ path {
                     .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
                 
             }
+            
+            svg.selectAll("circle")
+                .data(data)
+                .enter().append("circle")
+                    .attr("cx", function (d) { console.log(d.season,  xRange(d.season)); return xRange(d.season); })
+                    .attr("cy", function (d) { return yRange(d.rank); })
+                    .attr("r", function (d) { return 3.5; })
+                    .style("fill", function(d) { 
+                        
+                        if(d.PLAYER_NAME === 'Stephen Curry') return '#FFCC33'
+                        else if(d.PLAYER_NAME === 'Ray Allen') return '#008000'
+                        else return '#43BCF1'; 
+                        
+                    })
+                    .style("opacity", function(d) { return .4; });
                 
                 
             // // Add the valueline path.
