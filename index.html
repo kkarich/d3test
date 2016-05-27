@@ -102,7 +102,7 @@ path {
             // Add the Y Axis
             svg.append("g")
                 .attr("class", "y axis")
-                .call(yAxis);
+                .call(yAxis);sl
 
             
             // Define the line
@@ -110,14 +110,14 @@ path {
                 .x(function(d) { return xRange(d.season); })
                 .y(function(d) { return yRange(d.rank); });
                 
-            var uniquePlayers = d3.map(data, function(d){return d.PLAYER_NAME;}).keys()
-            for(var i in uniquePlayers){
-            // Add the valueline path.
-                svg.append("path")
-                    .attr("class", "line")
-                    .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
+            // var uniquePlayers = d3.map(data, function(d){return d.PLAYER_NAME;}).keys()
+            // for(var i in uniquePlayers){
+            // // Add the valueline path.
+            //     svg.append("path")
+            //         .attr("class", "line")
+            //         .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
                 
-            }
+            // }
             
             svg.selectAll("text")
                 .data(data)
