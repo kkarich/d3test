@@ -109,11 +109,14 @@ path {
             var valueline = d3.svg.line()
                 .x(function(d) { return xRange(d.season); })
                 .y(function(d) { return yRange(d.rank); });
-            
+            var uniquePlayers = d3.map(data, function(d){return d.PLAYER_NAME;}).keys()
+            for(var i in uniquePlayers){
             // Add the valueline path.
-            // svg.append("path")
-            //     .attr("class", "line")
-            //     .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === 'Stephen Curry') return true }  )));
+                svg.append("path")
+                    .attr("class", "line")
+                    .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
+                
+            }
                 
                 
             // // Add the valueline path.
