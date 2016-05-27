@@ -81,6 +81,7 @@ path {
         
         var xAxis = d3.svg.axis().scale(xRange)
         var yAxis = d3.svg.axis().scale(yRange).tickFormat(function(d,i){
+                console.log(d,i)
              if(d==1){
               return "#" + d.rank;
               }
