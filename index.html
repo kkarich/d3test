@@ -79,12 +79,12 @@ path {
             d3.extent(d3.values(data), function (d) { return d.season}));
         var yRange = d3.scale.linear().range([height, 0]).domain([5,1]);
         
-        var xAxis = d3.svg.axis().scale(xRange).tickFormat(d3.time.format("%b-%d %Y"))
+        var xAxis = d3.svg.axis().scale(xRange)
         var yAxis = d3.svg.axis().scale(yRange).tickFormat(function(d,i){
              if(d==1){
-              return "#" + d;
+              return "#" + d.rank;
               }
-              return d;
+              return d.rank;
             })
             .orient("left");
         
