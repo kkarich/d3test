@@ -125,7 +125,7 @@ path {
                 .data(data)
                 .enter().append("circle")
                     .attr("cx", function (d) { console.log(d.season,  xRange(d.season)); return xRange(d.season); })
-                    .attr("cy", function (d) { return yRange(d.FG3M); })
+                    .attr("cy", function (d) { return yRange(d.rank); })
                     .attr("r", function (d) { return 3.5; })
                     .style("fill", function(d) { 
                         
