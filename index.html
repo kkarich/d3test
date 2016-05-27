@@ -111,32 +111,34 @@ path {
                 .y(function(d) { return yRange(d.rank); });
             
             // Add the valueline path.
-            svg.append("path")
-                .attr("class", "line")
-                .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === 'Stephen Curry') return true }  )));
+            // svg.append("path")
+            //     .attr("class", "line")
+            //     .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === 'Stephen Curry') return true }  )));
                 
                 
-            // Add the valueline path.
-            svg.append("path")
-                .attr("class", "line")
-                .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === 'Ray Allen') return true }  )));
+            // // Add the valueline path.
+            // svg.append("path")
+            //     .attr("class", "line")
+            //     .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === 'Ray Allen') return true }  )));
                 
                 
         
-            svg.selectAll("circle")
-                .data(data)
-                .enter().append("circle")
-                    .attr("cx", function (d) { console.log(d.season,  xRange(d.season)); return xRange(d.season); })
-                    .attr("cy", function (d) { return yRange(d.rank); })
-                    .attr("r", function (d) { return 3.5; })
-                    .style("fill", function(d) { 
+            // svg.selectAll("circle")
+            //     .data(data)
+            //     .enter().append("circle")
+            //         .attr("cx", function (d) { console.log(d.season,  xRange(d.season)); return xRange(d.season); })
+            //         .attr("cy", function (d) { return yRange(d.rank); })
+            //         .attr("r", function (d) { return 3.5; })
+            //         .style("fill", function(d) { 
                         
-                        if(d.PLAYER_NAME === 'Stephen Curry') return '#FFCC33'
-                        else if(d.PLAYER_NAME === 'Ray Allen') return '#008000'
-                        else return '#43BCF1'; 
+            //             if(d.PLAYER_NAME === 'Stephen Curry') return '#FFCC33'
+            //             else if(d.PLAYER_NAME === 'Ray Allen') return '#008000'
+            //             else return '#43BCF1'; 
                         
-                    })
-                    .style("opacity", function(d) { return .4; });
+            //         })
+            //         .style("opacity", function(d) { return .4; });
+                    
+                    
       });
 
 
