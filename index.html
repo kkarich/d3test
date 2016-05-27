@@ -119,7 +119,7 @@ path {
                 
             // }
             
-            svg.selectAll("text")
+            svg.selectAll("g")
                 .data(data)
                 .enter().append("text")
                     .attr("x", function (d) { console.log(d, d.season,  xRange(d.season)); return xRange(d.season) - 60; })
