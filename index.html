@@ -75,8 +75,7 @@ path {
         }
         
         
-        var xRange = d3.scale.linear().range([0, width]).domain(
-            d3.extent(d3.values(data), function (d) { return d.season}));
+        var xRange = d3.scale.linear().range([0, width]).domain([1995, 2016];
         var yRange = d3.scale.linear().range([height, 0]).domain([5,1]);
         
         var xAxis = d3.svg.axis().scale(xRange)
