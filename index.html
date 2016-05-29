@@ -22,45 +22,12 @@ path {
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-
-  <script type="text/javascript">
-    // var svg = dimple.newSvg("body", 1000, 800);
-    //   d3.json("/threes-data.json", function (results) {
-    //     var data = [];
-    //     for(var i in results.data){
-    //         for(var j in results.data[i].players){
-    //             var player = results.data[i].players[j];
-    //             player.season = parseInt(results.data[i].season.split('-')[0])
-    //             // player.season = results.data[i].season
-    //             data.push(player);
-    //         }
-    //     }
-    //     var myChart = new dimple.chart(svg, data);
-    //     myChart.setBounds(60, 30, 800, 600)
-    //     var x = myChart.addCategoryAxis("x", "season");
-    //     // x.addOrderRule("Date");
-    //     myChart.addMeasureAxis("y", "FG3M");
-        
-    //     myChart.addSeries('PLAYER_NAME', dimple.plot.line);
-    //     myChart.addSeries('PLAYER_NAME', dimple.plot.bubble);
-    //     myChart.addLegend(180, 10, 360, 20, "right");
-    //     myChart.draw();
-
-
-  </script>
   
   
   <script type="text/javascript">
         var margin = {top: 30, right: 20, bottom: 30, left: 50},
         width = 10000 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
-      
-        // var svg = d3.select("body")
-        //     .append("svg")
-        //     .attr("width", 1000)
-        //     .attr("height", 1000)
-            
-            
             
       d3.json("/threes-data.json", function (results) {
         data = [];
@@ -89,9 +56,6 @@ path {
                           return d;
                         })
                     .orient("left");
-        
-        // svg.append("svg:g").call(xAxis).attr("transform", "translate(0,800)");
-        // svg.append("svg:g").call(yAxis).attr("transform", "translate(800,0)");
         
         var svg = d3.select("body")
             .append("svg")
@@ -130,67 +94,14 @@ path {
             svg.selectAll("circle")
                 .data(data)
                 .enter().append("text")
-                    .attr("x", function (d) { console.log(d, d.season,  xRange(d.season)); return xRange(d.season) - 60; })
+                    .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
                     .text( function (d) { return d.PLAYER_NAME})
                     .attr("font-family", "sans-serif")
                     .attr("font-size", "20px")
-                
-                
-            // // Add the valueline path.
-            // svg.append("path")
-            //     .attr("class", "line")
-            //     .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === 'Ray Allen') return true }  )));
-                
-                
-        
-            // svg.selectAll("circle")
-            //     .data(data)
-            //     .enter().append("circle")
-            //         .attr("cx", function (d) { console.log(d.season,  xRange(d.season)); return xRange(d.season); })
-            //         .attr("cy", function (d) { return yRange(d.rank); })
-            //         .attr("r", function (d) { return 3.5; })
-            //         .style("fill", function(d) { 
-                        
-            //             if(d.PLAYER_NAME === 'Stephen Curry') return '#FFCC33'
-            //             else if(d.PLAYER_NAME === 'Ray Allen') return '#008000'
-            //             else return '#43BCF1'; 
-                        
-            //         })
-            //         .style("opacity", function(d) { return .4; });
                     
                     
       });
-
-
-</script>
-  
-<script>
-
-// var top5 = angular.element($('table.table')).scope().rows.slice(0,5)
-// JSON.stringify(top5)
-
-// d3.json("data.json", function(error, root) {
-//   if (error) throw error;
-//         console.log(root)
-
-//         var vis = d3.select("#svgVisualize");
-//         console.log(vis)
-//         var xRange = d3.scale.linear().range([40, 400]).domain([0,250]);
-//         var yRange = d3.scale.linear().range([400, 40]).domain([20,35]);
-//         var xAxis = d3.svg.axis().scale(xRange);
-//         var yAxis = d3.svg.axis().scale(yRange).orient("left");
-//         vis.append("svg:g").call(xAxis).attr("transform", "translate(0,400)");
-//         vis.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
-//         var circles = vis.selectAll("circle").data(root.data);
-//     circles
-//         .enter()
-//         .insert("circle")
-//         .attr("cx", function (d) { return xRange (d.gp); })
-//         .attr("cy", function (d) { return yRange (d.pts); })
-//         .attr("r", 10)
-//         .style("fill", "red");
-// });
 
 
 </script>
