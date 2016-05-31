@@ -134,7 +134,7 @@ path {
                     .attr("font-size", "20px")
                     
             svg.selectAll("g .name")
-                .data(seasonData)
+                .data(seasonData, function(d) { return d.PLAYER_NAME; })
                     .exit().remove();
                     
             window.setTimeout(function(){draw(year + 1)}, 2000);
