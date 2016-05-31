@@ -176,10 +176,10 @@ path {
             
             // Remove old values  
             selection
+                    .exit()
                     .transition()
                     .duration(2000)
-                    .attr("y", function (d) { return yRange(6); })
-                    .exit().remove();
+                    .remove();
                     
             window.setTimeout(function(){draw(year + 1)}, 2000);
         
