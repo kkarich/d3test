@@ -28,29 +28,8 @@ path {
         var margin = {top: 30, right: 20, bottom: 30, left: 50},
         width = 1000 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
-            
-      d3.json("/threes-data.json", function (results) {
-        data = [];
-        for(var i in results.data){
-            for(var j in results.data[i].players){
-                var player = results.data[i].players[j];
-                player.season = parseInt(results.data[i].season.split('-')[0])
-                player.rank = parseInt(j) + 1;
-                // player.season = results.data[i].season
-                data.push(player);
-            }
-        }
         
-        draw(1996);
-                    
-                    
-      });
-
-    function draw(year){
         
-        var seasonData = data.filter(function(value){
-            return value.season === year;
-        });
         
         var xRange = d3.scale.linear().range([0, width]).domain([year - 5, 1996]);
         var yRange = d3.scale.linear().range([height, 0]).domain([5,1]);
@@ -87,6 +66,29 @@ path {
                 .attr("class", "y axis")
                 .call(yAxis);
 
+            
+      d3.json("/threes-data.json", function (results) {
+        data = [];
+        for(var i in results.data){
+            for(var j in results.data[i].players){
+                var player = results.data[i].players[j];
+                player.season = parseInt(results.data[i].season.split('-')[0])
+                player.rank = parseInt(j) + 1;
+                // player.season = results.data[i].season
+                data.push(player);
+            }
+        }
+        
+        draw(1996);
+                    
+                    
+      });
+
+    function draw(year){
+        
+        var seasonData = data.filter(function(value){
+            return value.season === year;
+        });
             
             // Define the line
             var valueline = d3.svg.line()
