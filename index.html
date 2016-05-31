@@ -118,9 +118,9 @@ path {
                 
             // }
             
-            svg.selectAll("g.text")
+            svg.selectAll("g")
                 .data(seasonData)
-                .enter().append("text")
+                .enter().append("g").append('text')
                     .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
                     .text( function (d) { return d.PLAYER_NAME})
