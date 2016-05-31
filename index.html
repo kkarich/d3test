@@ -136,14 +136,14 @@ path {
                 pathSelection
                         .transition()
                         .duration(750)
-                        .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === playerName) return true }  )))
+                        .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === playerName) return true }  )))
                         .style('stroke', 'red');
                         
                         
                 // New values
                 pathSelection
                     .enter().append("path")
-                    .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === playerName) return true }  )))
+                    .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === playerName) return true }  )))
                     .style('stroke', 'steelblue');
                 
                 pathSelection
