@@ -99,7 +99,7 @@ path {
     // Make the changes
         test.select(".line")   // change the line
             .duration(750)
-            .attr("d", valueline(seasonData));
+                    .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
         test.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
