@@ -114,7 +114,7 @@ path {
                 .x(function(d) { return xRange(d.season); })
                 .y(function(d) { return yRange(d.rank); });
                 
-            var uniquePlayers = d3.map(data, function(d){return d.PLAYER_NAME;}).keys()
+            var uniquePlayers = d3.map(seasonData, function(d){return d.PLAYER_NAME;}).keys()
             // for(var i in uniquePlayers){
             // // Add the valueline path.
             //     svg.selectAllappend("path")
