@@ -94,13 +94,13 @@ path {
     	xRange.domain([year - 5, year]);
 
     // Select the section we want to apply our changes to
-    var svg = d3.select("body").transition();
+    var test = d3.select("body").transition();
 
     // Make the changes
-        svg.select(".x.axis") // change the x axis
+        test.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
-        svg.select(".y.axis") // change the y axis
+        test.select(".y.axis") // change the y axis
             .duration(750)
             .call(yAxis);
             
