@@ -122,7 +122,7 @@ path {
             
                     
             var selectin = svg.selectAll("g .name")
-                .data(seasonData)
+                .data(seasonData, function(d) { return d.PLAYER_NAME; })
                 .enter().append("g")
                     .attr("transform", "translate(0,25)" )
                 .append('text')
