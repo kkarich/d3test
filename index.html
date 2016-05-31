@@ -136,6 +136,8 @@ path {
                 .enter().append("g")
                     .attr("transform", "translate(0,25)" )
                 .append('text')
+                    .transition()
+                    .duration(750)
                     .attr("class", "name")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
