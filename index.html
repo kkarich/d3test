@@ -118,7 +118,7 @@ path {
             // }
             
             
-            var pathSelection = svg.selectAll(".player")
+            var pathSelection = svg.selectAll("g .player")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
                 
             for(var i in seasonData){
@@ -138,7 +138,9 @@ path {
                         
                 // New values
                 pathSelection
-                    .enter().append("path")
+                    .enter().append("g")
+                        .attr("transform", "translate(0,25)" )
+                    .append("path")
                         .attr("d", valueline(
                             data.filter(function(d){
                                 if(d.PLAYER_NAME === seasonData[i].PLAYER_NAME )
