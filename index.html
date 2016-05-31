@@ -137,7 +137,8 @@ path {
                     
             // New values
             pathSelection
-                .enter().append("g")
+                .enter().append("path")
+                .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
             
                     
             var selection = svg.selectAll("g .name")
