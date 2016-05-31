@@ -117,11 +117,8 @@ path {
             //         .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
                 
             // }
-            // svg.selectAll("g text")
-            //     .data(seasonData)
-            //         .exit().remove();
             
-            svg.selectAll("g text")
+            svg.selectAll("g.text")
                 .data(seasonData)
                 .enter().append("g")
                     .attr("transform", "translate(0,0)" )
@@ -133,6 +130,9 @@ path {
                     .attr("font-size", "20px")
                     
                     
+            svg.selectAll("g.text")
+                .data(seasonData)
+                    .exit().remove();
                     
             window.setTimeout(function(){draw(year + 1)}, 2000);
         
