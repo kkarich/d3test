@@ -52,6 +52,7 @@ path {
         var yRange = d3.scale.linear().range([height, 0]).domain([5,1]);
         
         var xAxis = d3.svg.axis().scale(xRange)
+                    .ticks(5)
         var yAxis = d3.svg.axis().scale(yRange)
                     .ticks(5)
                     .tickFormat(function(d,i){
