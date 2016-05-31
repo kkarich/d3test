@@ -117,7 +117,7 @@ path {
                 
             // }
             
-            d3.select('svg').selectAll("text")
+            var svg = d3.select('svg').selectAll("text")
                 .data(seasonData)
                 .enter().append("text")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
