@@ -141,7 +141,7 @@ path {
             pathSelection
                 .enter().append("path")
                 .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[0]) return true }  )))
-        .style('stroke', 'steelblue');
+                .style('stroke', 'steelblue');
             
             pathSelection
                     .exit().remove();
