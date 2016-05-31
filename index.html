@@ -48,6 +48,10 @@ path {
 
     function draw(year){
         
+        var seasonData = data.filter(function(value){
+            return value.season === year;
+        });
+        
         var xRange = d3.scale.linear().range([0, width]).domain([year - 5, 1996]);
         var yRange = d3.scale.linear().range([height, 0]).domain([5,1]);
         
@@ -99,7 +103,7 @@ path {
             // }
             
             svg.selectAll("circle")
-                .data(data.slice(0,5))
+                .data(seasonData)
                 .enter().append("text")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
