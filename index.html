@@ -122,7 +122,6 @@ path {
             var pathSelection = svg.selectAll(".player")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
                 
-            console.log(previousData)
             // Updated values
             pathSelection
                     .transition()
