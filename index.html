@@ -97,9 +97,6 @@ path {
     var svg = d3.select("body").transition();
 
     // Make the changes
-        svg.select(".line")   // change the line
-            .duration(750)
-            .attr("d", valueline(data));
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
