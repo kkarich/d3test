@@ -126,7 +126,7 @@ path {
                     .text( function (d) { return d.PLAYER_NAME})
                     .attr("font-family", "sans-serif")
                     .attr("font-size", "20px")
-                    .exit.remove();
+                    .exit().remove();
                     
             window.setTimeout(function(){draw(year + 1)}, 2000);
         
