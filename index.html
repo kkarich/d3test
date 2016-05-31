@@ -91,7 +91,7 @@ path {
         
         
         var previousData = data.filter(function(value){
-            return value.season <= year;
+            return value.season < year;
         });
             	// Scale the range of the data again 
     	xRange.domain([year - 5, year]);
