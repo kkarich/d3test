@@ -121,7 +121,6 @@ path {
             var pathSelection = svg.selectAll("g .player")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
                 
-            for(var i in seasonData){
                 console.log(i, seasonData[i])
                 // Updated values
                 pathSelection
@@ -141,16 +140,16 @@ path {
                     .enter().append("g")
                         .attr("transform", "translate(0,25)" )
                     .append("path")
-                        .attr("d", valueline(
-                            data.filter(function(d){
-                                if(d.PLAYER_NAME === seasonData[i].PLAYER_NAME )
+                        .attr("d", function(d){ return valueline(
+                            data.filter(function(value){
+                                if(value.PLAYER_NAME === d.PLAYER_NAME )
                                     return true
                                 })
-                            ))
+                            )} )
                     .attr("class", "player")
                     .attr("id", seasonData[i].PLAYER_NAME)
                     .style('stroke', 'steelblue');
-            }
+            
                 
             
             pathSelection
