@@ -47,22 +47,22 @@ path {
                         })
                     .orient("left");
         
-        d3.select("body")
+        var svg = d3.select("body")
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
             .append("g")
                 .attr("transform", 
-                      "translate(" + margin.left + "," + margin.top + ")")
-                      
+                      "translate(" + margin.left + "," + margin.top + ")");
+        
             // Add the X Axis
-            .append("g")
+            svg.append("g")
                 .attr("class", "x axis")
                 .attr("transform", "translate(0," + height + ")")
-                .call(xAxis)
+                .call(xAxis);
         
             // Add the Y Axis
-            .append("g")
+            svg.append("g")
                 .attr("class", "y axis")
                 .call(yAxis);
 
@@ -85,6 +85,7 @@ path {
       });
 
     function draw(year){
+        console.log(year)
         var seasonData = data.filter(function(value){
             return value.season === year;
         });
@@ -117,7 +118,7 @@ path {
                 
             // }
             
-            var svg = d3.select('svg').selectAll("text")
+            svg.selectAll("circle")
                 .data(seasonData)
                 .enter().append("text")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
@@ -127,7 +128,7 @@ path {
                     .attr("font-size", "20px")
                     
                     
-            svg.selectAll("text")
+            svg.selectAll("circle")
                 .data(seasonData)
                     .exit().remove();
                     
