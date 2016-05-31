@@ -125,7 +125,7 @@ path {
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
             
             selection
-                    .attr("class", "test")
+                    .text( function (d) { console.log(d); return "UPDATED"})
             
                 selection
                 .enter().append("g")
