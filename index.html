@@ -120,7 +120,7 @@ path {
             
             
             var pathSelection = svg.selectAll(".player")
-                .data(seasonData)
+                .data(seasonData, function(d) { return d.PLAYER_NAME })
                 
                 
             // Updated values
