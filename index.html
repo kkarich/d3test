@@ -140,7 +140,8 @@ path {
                 .enter().append("path")
                 .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[0]) return true }  )));
             
-            
+            pathSelection
+                    .exit().remove();
                     
             var selection = svg.selectAll("g .name")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
