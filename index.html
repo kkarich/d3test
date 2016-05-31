@@ -126,7 +126,7 @@ path {
                         .transition()
                         .duration(750)
                         .attr("d", function(d){ return valueline(
-                            data.filter(function(value){
+                            previousData.filter(function(value){
                                 if(value.PLAYER_NAME === d.PLAYER_NAME )
                                     return true
                                 })
@@ -139,7 +139,7 @@ path {
                         .attr("transform", "translate(0,25)" )
                     .append("path")
                         .attr("d", function(d){ return valueline(
-                            data.filter(function(value){
+                            previousData.filter(function(value){
                                 if(value.PLAYER_NAME === d.PLAYER_NAME )
                                     return true
                                 })
