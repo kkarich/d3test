@@ -114,41 +114,27 @@ path {
                 .x(function(d) { return xRange(d.season); })
                 .y(function(d) { return yRange(d.rank); });
                 
-            var uniquePlayers = d3.map(seasonData, function(d){return d.PLAYER_NAME;}).keys()
-            // for(var i in uniquePlayers){
-            // // Add the valueline path.
-            //     svg.selectAllappend("path")
-            //         .attr("class", "line")
-            //         .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
-                
-            // }
             
-            
-                    
-                
-            for(var i in seasonData){
-                var playerName = seasonData[i].PLAYER_NAME
-                console.log(playerName)
-                
             var pathSelection = svg.selectAll("path")
                 .data(seasonData)
-                // Updated values
-                pathSelection
-                        .transition()
-                        .duration(750)
-                        .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === playerName) return true }  )))
-                        .style('stroke', 'red');
-                        
-                        
-                // New values
-                pathSelection
-                    .enter().append("path")
-                    .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === playerName) return true }  )))
-                    .style('stroke', 'steelblue');
                 
-                pathSelection
-                        .exit().remove();
-            }    
+                
+            // Updated values
+            pathSelection
+                    .transition()
+                    .duration(750)
+                    .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === data[0].PLAYER_NAME ) return true }  )))
+                    .style('stroke', 'red');
+                    
+                    
+            // New values
+            pathSelection
+                .enter().append("path")
+                .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === data[0].PLAYER_NAME) return true }  )))
+                .style('stroke', 'steelblue');
+            
+            pathSelection
+                    .exit().remove();
                     
             var selection = svg.selectAll("g .name")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
