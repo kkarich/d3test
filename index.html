@@ -97,6 +97,9 @@ path {
     var test = d3.select("body").transition();
 
     // Make the changes
+        test.select(".line")   // change the line
+            .duration(750)
+                    .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
         test.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
@@ -106,14 +109,15 @@ path {
             
             // Define the line
             var valueline = d3.svg.line()
+                .defined(function(d) { return d.y!=null; })
                 .x(function(d) { return xRange(d.season); })
                 .y(function(d) { return yRange(d.rank); });
                 
             var uniquePlayers = d3.map(seasonData, function(d){return d.PLAYER_NAME;}).keys()
             for(var i in uniquePlayers){
             // Add the valueline path.
-        test.select(".line")   // change the line
-            .duration(750)
+                svg.append("path")
+                    .attr("class", "line")
                     .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
                 
             }
