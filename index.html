@@ -114,14 +114,14 @@ path {
                 .x(function(d) { return xRange(d.season); })
                 .y(function(d) { return yRange(d.rank); });
                 
-            var uniquePlayers = d3.map(seasonData, function(d){return d.PLAYER_NAME;}).keys()
-            for(var i in uniquePlayers){
-            // Add the valueline path.
-                svg.append("path")
-                    .attr("class", "line")
-                    .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
+            // var uniquePlayers = d3.map(seasonData, function(d){return d.PLAYER_NAME;}).keys()
+            // for(var i in uniquePlayers){
+            // // Add the valueline path.
+            //     svg.selectAllappend("path")
+            //         .attr("class", "line")
+            //         .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
                 
-            }
+            // }
             
             console.log(seasonData)
             
