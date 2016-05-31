@@ -125,12 +125,13 @@ path {
             
             
                     
-            var pathSelection = svg.selectAll("path")
-                .data(seasonData)
                 
             for(var i in seasonData){
                 var playerName = seasonData[i].PLAYER_NAME
                 console.log(playerName)
+                
+            var pathSelection = svg.selectAll("path")
+                .data(seasonData)
                 // Updated values
                 pathSelection
                         .transition()
