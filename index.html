@@ -110,7 +110,6 @@ path {
             
             // Define the line
             var valueline = d3.svg.line()
-                .defined(function(d) { return d.rank!=null; })
                 .x(function(d) { return xRange(d.season); })
                 .y(function(d) { return yRange(d.rank); });
                 
