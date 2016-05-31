@@ -133,12 +133,12 @@ path {
             pathSelection
                     .transition()
                     .duration(750)
-                    .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[0]) return true }  )));
+                    .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[0]) return true }  )));
                     
             // New values
             pathSelection
                 .enter().append("path")
-                .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[0]) return true }  )));
+                .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[0]) return true }  )));
             
                     
             var selection = svg.selectAll("g .name")
