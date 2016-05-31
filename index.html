@@ -128,7 +128,7 @@ path {
                         .transition()
                         .duration(750)
                         .attr("d", valueline(
-                            data.filter(function(d){
+                            previousData.filter(function(d){
                                 if(d.PLAYER_NAME === seasonData[i].PLAYER_NAME ) 
                                     return true
                                 })
@@ -140,7 +140,7 @@ path {
                 pathSelection
                     .enter().append("path")
                         .attr("d", valueline(
-                            data.filter(function(d){
+                            previousData.filter(function(d){
                                 if(d.PLAYER_NAME === seasonData[i].PLAYER_NAME )
                                     return true
                                 })
