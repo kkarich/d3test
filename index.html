@@ -125,12 +125,12 @@ path {
                 pathSelection
                         .transition()
                         .duration(750)
-                        .attr("d", valueline(
-                            data.filter(function(d){
-                                if(d.PLAYER_NAME === seasonData[i].PLAYER_NAME ) 
+                        .attr("d", function(d){ return valueline(
+                            data.filter(function(value){
+                                if(value.PLAYER_NAME === d.PLAYER_NAME )
                                     return true
                                 })
-                            ))
+                            )} )
                         .style('stroke', 'red');
                         
                         
