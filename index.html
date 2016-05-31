@@ -123,6 +123,7 @@ path {
                 .enter().append("g")
                     .attr("transform", "translate(0,25)" )
                 .append('text')
+                    .attr("class", "name")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
                     .text( function (d) { return d.PLAYER_NAME})
