@@ -123,6 +123,7 @@ path {
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
                 
             for(var i in seasonData){
+                console.log(i, seasonData[i])
                 // Updated values
                 pathSelection
                         .transition()
