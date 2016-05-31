@@ -118,7 +118,7 @@ path {
                 
             // }
             
-            svg.selectAll("g")
+            svg.selectAll("rect")
                 .data(seasonData)
                 .enter().append("rect")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
