@@ -123,7 +123,10 @@ path {
                     
             var selection = svg.selectAll("g .name")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
-                
+            
+            selection.
+                    .attr("class", "test")
+            
                 selection
                 .enter().append("g")
                     .attr("transform", "translate(0,25)" )
