@@ -136,14 +136,14 @@ path {
                 .enter().append("g")
                     .attr("transform", "translate(0,25)" )
                 .append('text')
-                    .transition()
-                    .duration(750)
                     .attr("class", "name")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
                     .text( function (d) { console.log(d); return d.PLAYER_NAME})
                     .attr("font-family", "sans-serif")
                     .attr("font-size", "20px")
+                    .transition()
+                    .duration(750)
             
             // Remove old values  
             svg.selectAll("g .name")
