@@ -138,12 +138,13 @@ path {
                 .append('text')
                     .attr("class", "name")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
-                    .attr("y", function (d) { return yRange(d.rank); })
+                    .attr("y", function (d) { return yRange(6); })
                     .text( function (d) { console.log(d); return d.PLAYER_NAME})
                     .attr("font-family", "sans-serif")
                     .attr("font-size", "20px")
                     .transition()
                     .duration(750)
+                    .attr("y", function (d) { return yRange(d.rank); })
             
             // Remove old values  
             svg.selectAll("g .name")
