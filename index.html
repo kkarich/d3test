@@ -41,8 +41,14 @@ path {
             }
         }
         
+        draw(1996);
+                    
+                    
+      });
+
+    function draw(year){
         
-        var xRange = d3.scale.linear().range([0, width]).domain([1995, 2016]);
+        var xRange = d3.scale.linear().range([0, width]).domain([year - 5, 1996]);
         var yRange = d3.scale.linear().range([height, 0]).domain([5,1]);
         
         var xAxis = d3.svg.axis().scale(xRange)
@@ -99,11 +105,6 @@ path {
                     .text( function (d) { return d.PLAYER_NAME})
                     .attr("font-family", "sans-serif")
                     .attr("font-size", "20px")
-                    
-                    
-      });
-
-    function draw(year){
         
     }
     
