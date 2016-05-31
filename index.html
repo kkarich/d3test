@@ -120,14 +120,6 @@ path {
                 
                 // Updated values
                 pathSelection
-                        .transition()
-                        .duration(2000)
-                        .attr("d", function(d){ return valueline(
-                            previousData.filter(function(value){
-                                if(value.PLAYER_NAME === d.PLAYER_NAME )
-                                    return true
-                                })
-                            )})
                     .style('stroke', function (d) {
                         if(d.rank === 1){
                             return 'red'
@@ -136,6 +128,14 @@ path {
                         }
                         
                     });
+                        .transition()
+                        .duration(2000)
+                        .attr("d", function(d){ return valueline(
+                            previousData.filter(function(value){
+                                if(value.PLAYER_NAME === d.PLAYER_NAME )
+                                    return true
+                                })
+                            )})
                         
                         
                 // New values
