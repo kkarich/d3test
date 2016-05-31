@@ -98,7 +98,7 @@ path {
             // }
             
             svg.selectAll("circle")
-                .data(data)
+                .data(dataslice(0,5))
                 .enter().append("text")
                     .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
