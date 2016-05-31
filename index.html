@@ -121,7 +121,7 @@ path {
             svg.selectAll("g")
                 .data(seasonData)
                 .enter().append("g")
-                    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+                    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
                 .append('text')
                     .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
