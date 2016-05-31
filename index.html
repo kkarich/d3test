@@ -101,11 +101,8 @@ path {
 
     // Make the changes
         test.select(".x.axis") // change the x axis
-            .duration(750)
+            .duration(2000)
             .call(xAxis);
-        test.select(".y.axis") // change the y axis
-            .duration(750)
-            .call(yAxis);
             
             // Define the line
             var valueline = d3.svg.line()
@@ -124,7 +121,7 @@ path {
                 // Updated values
                 pathSelection
                         .transition()
-                        .duration(750)
+                        .duration(2000)
                         .attr("d", function(d){ return valueline(
                             previousData.filter(function(value){
                                 if(value.PLAYER_NAME === d.PLAYER_NAME )
