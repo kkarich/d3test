@@ -140,6 +140,7 @@ path {
                 .enter().append("path")
                 .attr("d", valueline(data.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[0]) return true }  )));
             
+            
                     
             var selection = svg.selectAll("g .name")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
@@ -167,8 +168,7 @@ path {
                     .attr("y", function (d) { return yRange(d.rank); })
             
             // Remove old values  
-            svg.selectAll("g .name")
-                .data(seasonData, function(d) { return d.PLAYER_NAME })
+            selection
                     .exit().remove();
                     
             window.setTimeout(function(){draw(year + 1)}, 3000);
