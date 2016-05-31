@@ -122,7 +122,7 @@ path {
             
                     
             var selectin = svg.selectAll("g .name")
-                .data(seasonData, function(d) { return d.id })
+                .data(seasonData, function(d) { return d.PLAYER_NAME + d.season })
                 .enter().append("g")
                     .attr("transform", "translate(0,25)" )
                 .append('text')
@@ -134,7 +134,7 @@ path {
                     .attr("font-size", "20px")
                     
             svg.selectAll("g .name")
-                .data(seasonData, function(d) { return d.id  })
+                .data(seasonData, function(d) { return d.PLAYER_NAME + d.season  })
                     .exit().remove();
                     
             window.setTimeout(function(){draw(year + 1)}, 2000);
