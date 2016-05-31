@@ -99,7 +99,7 @@ path {
     // Make the changes
         test.select(".line")   // change the line
             .duration(750)
-            .attr("d", valueline(data));
+            .attr("d", valueline(seasonData));
         test.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
