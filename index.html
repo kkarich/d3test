@@ -126,6 +126,7 @@ path {
             
             selection
                     .text( function (d) { console.log(d); return "UPDATED"})
+                    .attr("y", function (d) { return yRange(d.rank); })
             
                 selection
                 .enter().append("g")
