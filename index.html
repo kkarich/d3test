@@ -79,6 +79,14 @@ path {
             }
         }
         
+        var uniquePlayers = [];
+        for(i = 0; i< data.length; i++){    
+            if(uniquePlayers.indexOf(data[i].PLAYER_NAME) === -1){
+                uniquePlayers.push(data[i].PLAYER_NAME);        
+            }        
+        }
+        
+        console.log(uniquePlayers)
         draw(1996);
                     
                     
