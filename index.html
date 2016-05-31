@@ -118,13 +118,10 @@ path {
                 
             // }
             
-            svg.selectAll("rect")
+            svg.selectAll("g.text")
                 .data(seasonData)
-                .enter().append("rect")
-                    .attr("x", function (d) { return xRange(d.season) - 60; })
-                    .attr("y", function (d) { return yRange(d.rank); })
-                    .attr("width", "30")
-                    .attr("height", "30")
+                .enter().append("g")
+                    .attr("transform", "translate(0,0)" )
                 .append('text')
                     .attr("x", function (d) { return xRange(d.season) - 60; })
                     .attr("y", function (d) { return yRange(d.rank); })
