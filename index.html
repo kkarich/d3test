@@ -124,10 +124,13 @@ path {
             var selection = svg.selectAll("g .name")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
             
+            
+            // Updated values
             selection
                     .attr("y", function (d) { return yRange(d.rank); })
             
-                selection
+            // New values
+            selection
                 .enter().append("g")
                     .attr("transform", "translate(0,25)" )
                 .append('text')
@@ -137,7 +140,8 @@ path {
                     .text( function (d) { console.log(d); return d.PLAYER_NAME})
                     .attr("font-family", "sans-serif")
                     .attr("font-size", "20px")
-                    
+            
+            // Remove old values  
             svg.selectAll("g .name")
                 .data(seasonData, function(d) { return d.PLAYER_NAME })
                     .exit().remove();
