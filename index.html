@@ -133,7 +133,7 @@ path {
             pathSelection
                     .transition()
                     .duration(750)
-                    .attr("y", function (d) { return yRange(d.rank); })
+                    .attr("d", valueline(previousData.filter(function(d){if(d.PLAYER_NAME === uniquePlayers[i]) return true }  )));
             
                     
             var selection = svg.selectAll("g .name")
