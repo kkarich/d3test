@@ -53,16 +53,16 @@ path {
                 .attr("height", height + margin.top + margin.bottom)
             .append("g")
                 .attr("transform", 
-                      "translate(" + margin.left + "," + margin.top + ")");
-        svg = d3.select('svg')
+                      "translate(" + margin.left + "," + margin.top + ")")
+                      
             // Add the X Axis
-            svg.append("g")
+            .append("g")
                 .attr("class", "x axis")
                 .attr("transform", "translate(0," + height + ")")
-                .call(xAxis);
+                .call(xAxis)
         
             // Add the Y Axis
-            svg.append("g")
+            .append("g")
                 .attr("class", "y axis")
                 .call(yAxis);
 
