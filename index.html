@@ -89,6 +89,10 @@ path {
         console.log(uniquePlayers)
         for(var i in uniquePlayers){
             
+            var playerSeasons = data.filter(function(value){
+                return value.players.indexOf(uniquePlayers[i])
+            });
+            
         }
         draw(1996);
                     
