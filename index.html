@@ -199,7 +199,8 @@ path {
             // Updated values
             selection
                     .attr("visibility", function(d){
-                        if(d.rank != null) return 'visible'
+                        if(d.rank == null) return 'hidden'
+                        else return 'visible'
                     })
                     .transition()
                     .duration(2000)
