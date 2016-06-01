@@ -200,9 +200,9 @@ path {
             selection
                     .transition()
                     .duration(2000)
-                    .style("opacity", function(d){
-                        if(d.rank == null) return 0
-                        else return 1
+                    .attr("visibility", function(d){
+                        if(d.rank == null) return 'hidden'
+                        else return 'visible'
                     })
                     .attr("y", function (d) { if(d.rank != null  ) return yRange(d.rank); else return  yRange(6);})
             
@@ -218,9 +218,8 @@ path {
                     .attr("font-family", "sans-serif")
                     .attr("font-size", "20px")
                     
-                    .style("opacity", function(d){
-                        if(d.rank == null) return 0
-                        else return 1
+                    .attr("visibility", function(d){
+                        if(d.rank == null) return 'hidden'
                     })
                     .transition()
                     .duration(2000)
