@@ -215,7 +215,7 @@ path {
                     .attr("font-size", "20px")
                     .transition()
                     .duration(2000)
-                    .attr("y", function (d) { return yRange(d.rank); })
+                    .attr("y", function (d) { if(d.rank != null )return yRange(d.rank); })
             
             // Remove old values  
             selection
