@@ -125,16 +125,17 @@ path {
                 
                 // Updated values
                 pathSelection
-                    .style('stroke', function (d) {
-                        if(d.rank === 1){
-                            return 'red'
-                        }else{
-                            return 'blue'
-                        }
-                        
-                    })
                         .transition()
                         .duration(2000)
+                        
+                        .style('stroke', function (d) {
+                            if(d.rank === 1){
+                                return 'red'
+                            }else{
+                                return 'blue'
+                            }
+                            
+                        })
                         .attr("d", function(d){ return valueline(
                             previousData.filter(function(value){
                                 if(value.PLAYER_NAME === d.PLAYER_NAME )
