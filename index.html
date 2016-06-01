@@ -213,6 +213,10 @@ path {
                     .text( function (d) { return d.PLAYER_NAME})
                     .attr("font-family", "sans-serif")
                     .attr("font-size", "20px")
+                    
+                    .attr("visibility", function(d){
+                        if(d.rank == null) return 'hidden'
+                    })
                     .transition()
                     .duration(2000)
                     .attr("y", function (d) { if(d.rank != null  ) return yRange(d.rank); else return  yRange(6);})
