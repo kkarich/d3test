@@ -154,12 +154,14 @@ path {
                             }
                             
                         })
-                        .attr("d", function(d){ return valueline(
+                        .attr("d", function(d){ if(d.rank > 6){return valueline(
                             previousData.filter(function(value){
                                 if(value.PLAYER_NAME === d.PLAYER_NAME )
                                     return true
                                 })
-                            )})
+                            )
+                            
+                        }})
                         
                         
                 // New values
