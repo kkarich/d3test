@@ -90,8 +90,8 @@ path {
         for(var i in uniquePlayers){
             
             var playerSeasons = data.filter(function(value){
-                for(var j in data.players){
-                    if(data.players[j].PLAYER_NAME === uniquePlayers[i]){
+                for(var j in value.players){
+                    if(value.players[j].PLAYER_NAME === uniquePlayers[i]){
                         return true;
                     }
                 }
