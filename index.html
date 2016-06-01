@@ -99,7 +99,7 @@ path {
             
             for(var year = 1996; year <2016; year++){
                 if(playerSeasons.indexOf(year) < 0){
-                    data.push({PLAYER_NAME:uniquePlayers[i], rank: null, season: year})
+                    data.push({PLAYER_NAME:uniquePlayers[i], rank: 10, season: year})
                 }
             }
             console.log(uniquePlayers[i], data)
@@ -154,7 +154,7 @@ path {
                             }
                             
                         })
-                        .attr("d", function(d){ if(d.rank != null){return valueline(
+                        .attr("d", function(d){ if(d.rank < 6){return valueline(
                             previousData.filter(function(value){
                                 if(value.PLAYER_NAME === d.PLAYER_NAME )
                                     return true
@@ -169,14 +169,12 @@ path {
                     .enter().append("g")
                         .attr("transform", "translate(0,25)" )
                     .append("path")
-                        .attr("d", function(d){ if(d.rank != null){return valueline(
+                        .attr("d", function(d){ return valueline(
                             previousData.filter(function(value){
                                 if(value.PLAYER_NAME === d.PLAYER_NAME )
                                     return true
                                 })
-                            )
-                            
-                        }})
+                            )} )
                     .attr("class", "player")
                     .style('stroke', function (d) {
                         if(d.rank === 1){
