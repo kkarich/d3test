@@ -169,12 +169,14 @@ path {
                     .enter().append("g")
                         .attr("transform", "translate(0,25)" )
                     .append("path")
-                        .attr("d", function(d){ return valueline(
+                        .attr("d", function(d){ if(d.rank < 6){return valueline(
                             previousData.filter(function(value){
                                 if(value.PLAYER_NAME === d.PLAYER_NAME )
                                     return true
                                 })
-                            )} )
+                            )
+                            
+                        }})
                     .attr("class", "player")
                     .style('stroke', function (d) {
                         if(d.rank === 1){
