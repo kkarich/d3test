@@ -198,12 +198,12 @@ path {
             
             // Updated values
             selection
+                    .transition()
+                    .duration(2000)
                     .attr("visibility", function(d){
                         if(d.rank == null) return 'hidden'
                         else return 'visible'
                     })
-                    .transition()
-                    .duration(2000)
                     .attr("y", function (d) { if(d.rank != null  ) return yRange(d.rank); else return  yRange(6);})
             
             // New values
