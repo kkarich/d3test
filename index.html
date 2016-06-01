@@ -200,9 +200,9 @@ path {
             selection
                     .transition()
                     .duration(2000)
-                    .attr("visibility", function(d){
-                        if(d.rank == null) return 'hidden'
-                        else return 'visible'
+                    .style("opacity", function(d){
+                        if(d.rank == null) return 0
+                        else return 1
                     })
                     .attr("y", function (d) { if(d.rank != null  ) return yRange(d.rank); else return  yRange(6);})
             
