@@ -97,6 +97,11 @@ path {
                 return playerObj.season;
             });
             
+            for(var year = 1996; year <2016; year++){
+                if(playerSeasons.indexOf(year) < 0){
+                    data.push({PLAYER_NAME:uniquePlayers[i], rank: 6, season: year})
+                }
+            }
             console.log(uniquePlayers[i], playerSeasons)
             
         }
