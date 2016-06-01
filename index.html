@@ -200,7 +200,7 @@ path {
             selection
                     .transition()
                     .duration(2000)
-                    .attr("y", function (d) { return yRange(d.rank); })
+                    .attr("y", function (d) { if(d.rank != null  ) return yRange(d.rank); else return  yRange(6);})
             
             // New values
             selection
@@ -215,7 +215,7 @@ path {
                     .attr("font-size", "20px")
                     .transition()
                     .duration(2000)
-                    .attr("y", function (d) { if(d.rank != null  )return yRange(d.rank); else return  yRange(6);})
+                    .attr("y", function (d) { if(d.rank != null  ) return yRange(d.rank); else return  yRange(6);})
             
             // Remove old values  
             selection
